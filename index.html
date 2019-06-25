@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度搜索</title>
+    <style>
+        *{margin:0;padding:0;}
+        ul{list-style:none;}
+        a{text-decoration: none;color:#000;display: block;}
+        #wrap{
+            width:642px;
+            margin:50px auto;
+            text-align:center;
+        }
+        #wrap img{
+            width:270px;
+            height:129px;
+        }
+        #wrap [type="text"]{
+            width:500px;
+            height:35px;
+            font-size:18px;
+            text-indent:10px;
+        }
+        #wrap [type="button"]{
+            width:100px;
+            height:40px;
+            color:#fff;
+            background-color: blue;
+            border:0;
+            outline: none;
+            cursor: pointer;
+            margin-left:-5px;
+        }
+        #list{
+            display: none;
+            width:502px;
+            margin-left:19px;
+            border:1px solid #666;
+            border-top-color:transparent;
+        }
+        #list li{
+            line-height:35px;
+            text-align: left;
+            text-indent: 10px;
+        }
+        #list li:hover{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="images/bd_logo1.png" alt="">
+        <div id="search">
+            <input id="menu" type="text">
+            <input id="but" type="button" value="百度一下">
+        </div>
+        <ul id="list">
+            <!-- <li>132</li>
+            <li>132</li> -->
+        </ul>
+    </div>
+
+</body>
+</html>
