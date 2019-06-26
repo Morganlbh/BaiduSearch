@@ -59,10 +59,48 @@
             <input id="but" type="button" value="百度一下">
         </div>
         <ul id="list">
-            <!-- <li>132</li>
-            <li>132</li> -->
+            <!--<li>132</li>-->
+            <!--<li>132</li>-->
         </ul>
     </div>
+    <script>
+        let oTxt = document.getElementById('menu');
+        let oList = document.getElementById('list');
+        //输入时触发,创建标签
+        oTxt.oninput = function () {
+            let val = this.value;
+            if(val){//value存在
+                let oScript = document.createElement('script');
+                oScript.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="
+                    + val +"&cb=fun"
+                document.body.appendChild(oScript);
+                //加载完成移除script
+                oScript.onload = function(){
+                    document.body.removeChild(this);
+                }
+                oList.style.display = "block";
+            }else{
+                oList.style.display = "none"; //没有内容就消失
+            }
 
+        }
+        //声明fun
+        function fun(obj) {
+            // console.log(obj.s);
+            let arr = obj.s;
+            let aHtml = '';
+            for(let key of arr){
+                aHtml += `<li>${key}</li>`
+
+            }
+            oList.innerHTML = aHtml;
+            console.log(oList);
+        }
+
+
+
+    </script>
+     <!--<script src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?-->
+     <!--wd=%E6%9C%9D%E6%AD%8C&cb=fun"></script>-->
 </body>
 </html>
